@@ -52,18 +52,11 @@ function cmp($a, $b)
 	if(strlen($a)<$i) return -1;
 	if(strlen($b)<$i) return +1;
 	return 0;
-	
-	//$l1 = array_search(substr($a, 0, 1), $GLOBALS['alphabet']);
-	//$l2 = array_search(substr($b, 0, 1), $GLOBALS['alphabet']);
-	//if ($l1 < $l2) return -1;
-	//if ($l2 < $l1) return 1;
-	//if ($l1 === $l2) return cmp(substr($a, 1), substr($b, 1));
-	//return $l1 - $l2;
 }
 usort($booglan_sorted_words_arr, "cmp");
-foreach ($booglan_sorted_words_arr as &$value) {
-	echo $value . " ";
-}
+
+var_dump(implode(' ', $booglan_sorted_words_arr));
+
 //Nice numbers
 $booglan_numbers_arr = explode(' ', $booglanB);
 $booglan_nice_numbers_arr = array_filter( $booglan_numbers_arr, function($word) use ($alphabet) {
@@ -79,5 +72,5 @@ $booglan_nice_numbers_arr = array_filter( $booglan_numbers_arr, function($word) 
 	return $value >= 422224 || ($value%3)==0; 
 	
 });
-echo "<br>\r\n";
+echo "<br>\r\n <br>\r\n";
 echo "Text B has " . count($booglan_nice_numbers_arr) . " nice number. \n\r<br> \n\r<br>";
