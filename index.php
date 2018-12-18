@@ -81,4 +81,5 @@ $booglan_nice_numbers_arr = array_filter( $booglan_numbers_arr, function($word) 
 	return $value >= 422224 || ($value%3)==0; 
 	
 });
+echo "<br>\r\n";
 echo "Text B has " . count($booglan_nice_numbers_arr) . " nice number. \n\r<br> \n\r<br>";
